@@ -71,19 +71,7 @@ int main() {
     * MatrixGraph test
     */
     std::cout << "Testing MatrixGraph object..." << std::endl;
-    MatrixGraph matrixGraph(7);
-    matrixGraph.AddEdge(0, 1);
-    matrixGraph.AddEdge(0, 5);
-    matrixGraph.AddEdge(1, 2);
-    matrixGraph.AddEdge(1, 3);
-    matrixGraph.AddEdge(1, 5);
-    matrixGraph.AddEdge(1, 6);
-    matrixGraph.AddEdge(3, 2);
-    matrixGraph.AddEdge(3, 4);
-    matrixGraph.AddEdge(3, 6);
-    matrixGraph.AddEdge(5, 4);
-    matrixGraph.AddEdge(5, 6);
-    matrixGraph.AddEdge(6, 4);
+    MatrixGraph matrixGraph(listGraph);
 
     mainBFS(matrixGraph, [](int vertex){ std::cout << vertex << " ";});
     std::cout << std::endl;
@@ -96,19 +84,7 @@ int main() {
      * SetGraph test
      */
     std::cout << "Testing SetGraph object..." << std::endl;
-    SetGraph setGraph(7);
-    setGraph.AddEdge(0, 1);
-    setGraph.AddEdge(0, 5);
-    setGraph.AddEdge(1, 2);
-    setGraph.AddEdge(1, 3);
-    setGraph.AddEdge(1, 5);
-    setGraph.AddEdge(1, 6);
-    setGraph.AddEdge(3, 2);
-    setGraph.AddEdge(3, 4);
-    setGraph.AddEdge(3, 6);
-    setGraph.AddEdge(5, 4);
-    setGraph.AddEdge(5, 6);
-    setGraph.AddEdge(6, 4);
+    SetGraph setGraph(matrixGraph);
 
     mainBFS(setGraph, [](int vertex){ std::cout << vertex << " ";});
     std::cout << std::endl;
@@ -121,19 +97,7 @@ int main() {
      * ArcGraph test
      */
     std::cout << "Testing ArcGraph object..." << std::endl;
-    ArcGraph arcGraph(7);
-    arcGraph.AddEdge(0, 1);
-    arcGraph.AddEdge(0, 5);
-    arcGraph.AddEdge(1, 2);
-    arcGraph.AddEdge(1, 3);
-    arcGraph.AddEdge(1, 5);
-    arcGraph.AddEdge(1, 6);
-    arcGraph.AddEdge(3, 2);
-    arcGraph.AddEdge(3, 4);
-    arcGraph.AddEdge(3, 6);
-    arcGraph.AddEdge(5, 4);
-    arcGraph.AddEdge(5, 6);
-    arcGraph.AddEdge(6, 4);
+    ArcGraph arcGraph(setGraph);
 
     mainBFS(arcGraph, [](int vertex){ std::cout << vertex << " ";});
     std::cout << std::endl;

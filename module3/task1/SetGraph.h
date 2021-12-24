@@ -36,7 +36,7 @@ public:
 
     std::vector<int> GetNextVertices(int vertex) const override {
         assert(0 <= vertex && vertex < adjacencyLists.size());
-        std::vector<int> nextVertices(adjacencyLists.size());
+        std::vector<int> nextVertices;
         for (int elem: adjacencyLists[vertex])
             nextVertices.push_back(elem);
         return nextVertices;
